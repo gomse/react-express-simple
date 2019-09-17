@@ -3,11 +3,19 @@
   "version": "0.0.1",
   "description": "React & Express Boilerplate.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": {
     "name": "sehwan",
     "email": "sehwan@gomse.net"
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/runtime": "^7.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
   }
 }
-
