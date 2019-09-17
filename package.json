@@ -1,0 +1,13 @@
+{
+  "name": "react-express-simple",
+  "version": "0.0.1",
+  "description": "React & Express Boilerplate.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": {
+    "name": "sehwan",
+    "email": "sehwan@gomse.net"
+  }
+}
+
