@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "React & Express Boilerplate.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon"
+  },
   "author": {
     "name": "sehwan",
     "email": "sehwan@gomse.net"
@@ -11,11 +13,18 @@
   "dependencies": {
     "@babel/core": "^7.6.0",
     "@babel/polyfill": "^7.6.0",
-    "@babel/runtime": "^7.6.0"
+    "@babel/runtime": "^7.6.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
-    "@babel/preset-env": "^7.6.0"
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "nodemon": "^1.19.2"
   }
 }
