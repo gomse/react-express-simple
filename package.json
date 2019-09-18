@@ -4,7 +4,13 @@
   "description": "React & Express Boilerplate.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "clean": "rm -rf builds",
+    "build:server": "babel server -d builds",
+    "build:app": "webpack --mode production",
+    "build": "npm run clean && npm run build:server && npm run build:app",
+    "server": "nodemon",
+    "app": "webpack-dev-server --mode development --hot",
+    "start": "concurrently \"npm run server\" \"npm run app\""
   },
   "author": {
     "name": "sehwan",
@@ -18,13 +24,34 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.6.0",
-    "nodemon": "^1.19.2"
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "concurrently": "^4.1.2",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   }
 }
