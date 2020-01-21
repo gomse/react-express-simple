@@ -4,8 +4,6 @@ var HtmlWebPackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 env.config();
 
-var appName = process.env.APP;
-var appPublicPath = '/' + appName;
 var devServerPort = 4001;
 var devServerProxy = {
   '/api': 'http://127.0.0.1:4000'
@@ -16,16 +14,16 @@ function resolve(name) {
 }
 
 module.exports = {
-  entry: resolve(path.join(appName, 'index.jsx')),
+  entry: resolve(path.join('app', 'index.jsx')),
   output: {
-    path: resolve(path.join('builds', appName)),
+    path: resolve(path.join('builds', 'app')),
     filename: 'bundle.js',
-    publicPath: appPublicPath
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@': resolve(appName)
+      '@': resolve('app')
     }
   },
   module: {
@@ -67,14 +65,14 @@ module.exports = {
         options: {
           name: '[name].[ext]', //[path][name].[ext] or [contenthash].[ext]
           outputPath: 'assets',
-          publicPath: path.join(appPublicPath, 'assets')
+          publicPath: '/assets',
         }
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.join(appName, 'index.html'),
+      template: path.join('app', 'index.html'),
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
@@ -83,9 +81,9 @@ module.exports = {
     })
   ],
   devServer: {
-    publicPath: appPublicPath,
+    publicPath: '/',
     historyApiFallback: {
-      index: appPublicPath + '/'
+      index: '/'
     },
     proxy: devServerProxy,
     host: '0.0.0.0',
